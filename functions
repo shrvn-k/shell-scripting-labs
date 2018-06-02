@@ -1,0 +1,23 @@
+#!/bin/bash
+function1()
+{
+	echo "this is inside a function"
+}
+
+name="Shravan"	# global variable 'name'
+echo "Global name = $name"		# print global name
+
+function2(){
+	local name="Muriel"	# local variable 'name'
+	echo "Local name = $name" # print local name
+}
+
+function2
+echo "Global name = $name"	#print global name
+
+getSum(){				# function to add two numbers
+	echo "$(($1+$2))"
+}
+
+sum=$(getSum 4	5)	#passing 4 and 5 to getSum
+echo "Sum of 4 and 5 = $sum"
